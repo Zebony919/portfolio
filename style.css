@@ -80,12 +80,19 @@ img {
     padding-top: 40px;
 }
 
-.project1 {
+.project1,
+.project2,
+.project3 {
     height: 600px;
     background-color: rgb(184, 255, 248);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 40px;
+}
+
+.project2 {
+    background-color: rgb(0, 40, 0);
 }
 
 .project1Content {
