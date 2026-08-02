@@ -1,40 +1,69 @@
-type ExternalLinks = {
+type Links = {
     label: string;
     href: string;
-}
+};
 
 type FooterProps = {
-    externalLinks?: ExternalLinks[];
-    text?: string;
-}
+  navigationLinks?: Links[];
+  externalLinks?: Links[];
+  title?: string;
+  desc?: string;
+  text1?: string;
+  text2?: string;
+  copyright?: string;
+};
 
-export default function Footer( { externalLinks, text }: FooterProps ) {
-    return(
-        <footer className="w-full bg-gray-900 text-white">
-            <div className="max-w-6xl mx-auto px-6  py-10 flex flex-row gap-10">
+export default function Footer({ navigationLinks, externalLinks, title, desc, text1, text2, copyright }: FooterProps) {
+    return (
+    <footer className="w-full bg-gray-900 text-white mt-auto">
+        <div className="w-full min-h-50 px-10 py-10 flex flex-row flex-wrap items-center gap-10">
 
-                {externalLinks && externalLinks.length > 0 && (
-                    <div className="flex flex-col gap-2">
-                        <h3 className="font-bold text-lg">Links</h3>
-                        <ul className="flex flex-col gap-1">
-                            {externalLinks.map((link) => (
-                                <li key={link.href}>
-                                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                                        {link.label}
-                                    </a>
-                                </li>
+            <div className="max-w-70 mr-20 flex flex-col items-center justify-center">
+                <h1 className="font-serif text-3xl">{title}</h1>
+                <p className="text-1xl mr-auto">{desc}</p>
+            </div>
+
+            <div className="flex flex-row flex-wrap gap-20">
+                {navigationLinks && navigationLinks.length > 0 && (
+                    <div className="flex flex-col gap-5">
+                        <h3 className="font-bold text-2xl">Navigation</h3>
+                        <ul className="flex flex-col gap-3">
+                            {navigationLinks.map((link) => (
+                            <li key={link.href}>
+                                <a href={link.href} className="hover:underline">
+                                {link.label}
+                                </a>
+                            </li>
                             ))}
                         </ul>
                     </div>
                 )}
 
-                { text && (
-                    <div className="flex items-end ml-auto">
-                        <p className="text-sm text-gray-500">{text}</p>
+                {externalLinks && externalLinks.length > 0 && (
+                    <div className="flex flex-col gap-5">
+                        <h3 className="font-bold text-2xl">Links</h3>
+                        <ul className="flex flex-col gap-3">
+                            {externalLinks.map((link) => (
+                            <li key={link.href}>
+                                <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                {link.label}
+                                </a>
+                            </li>
+                            ))}
+                        </ul>
                     </div>
                 )}
-
             </div>
-        </footer>
-    )
+
+            <div className="max-w-100 font-serif text-2xl flex flex-col justify-center gap-5 ml-auto mr-20">
+                <h3>{text1}</h3>
+                <h3>{text2}</h3>
+            </div>
+        </div>
+
+        <div className="w-full h-15 bg-gray-950 flex items-center justify-center text-sm">
+            <p>{copyright}</p>
+        </div>
+    </footer>
+    );
 }
