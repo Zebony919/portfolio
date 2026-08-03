@@ -14,9 +14,60 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div className="border-8 border-white">
+    <div className="flex flex-col flex-1 items-center justify-center gap-40 bg-zinc-50 font-sans dark:bg-black">
+      <div className="p-10 mt-10 mb-10 border-8 border-white">
         <canvas ref={canvasRef} id="game"/>
+      </div>
+
+      <div className="w-full mb-30 font-nova">
+        <h1 className="w-full pl-60 text-4xl">About</h1>
+        <p className="w-[60%] mt-10 justify-self-center text-2xl text-center">
+          Loren sel ars wel Loren sel ars wel Loren sel ars wel
+          Loren sel ars wel Loren sel ars wel Loren sel ars wel
+          Loren sel ars wel Loren sel ars wel Loren sel ars wel
+          Loren sel ars wel Loren sel ars wel Loren sel ars wel
+          Loren sel ars wel Loren sel ars wel Loren sel ars wel
+          Loren sel ars wel Loren sel ars wel Loren sel ars wel
+        </p>
+      </div>
+
+      <div className="w-full font-nova">
+        <h1 className="w-full pl-60 pb-20 text-4xl">Projects</h1>
+
+        <div className="pl-60 flex flex-wrap gap-10">
+          <div className="w-100 md:w-100 h-200 md:h-170 bg-white"></div>
+
+          <div className="flex flex-col gap-10">
+            <div className="w-100 md:w-200 h-200 md:h-80 bg-white"></div>
+            <div className="w-100 md:w-200 h-200 md:h-80 bg-white"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full flex flex-col items-center font-nova">
+        <h1 className="w-full pl-60 text-4xl">Skills</h1>
+
+        <div className="w-[60%] grid grid-cols-4 place-items-center gap-5 mt-10">
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-red-600 rounded-2xl"></div>
+        </div>
+      </div>
+
+      <div className="w-full flex flex-col items-center mb-30 font-nova">
+        <h1 className="w-full pl-60 text-4xl">Contacts</h1>
+
+        <div className="flex gap-10 mt-10">
+          <div className="w-50 h-10 bg-blue-800 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-blue-800 rounded-2xl"></div>
+          <div className="w-50 h-10 bg-blue-800 rounded-2xl"></div>
+        </div>
       </div>
     </div>
   );

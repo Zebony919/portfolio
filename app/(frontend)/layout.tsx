@@ -62,16 +62,6 @@ export default function RootLayout({
         <Navbar />
 
         {children}
-
-        <Footer 
-          navigationLinks={navigationLinks}
-          externalLinks={externalLinks}
-          title={title}
-          desc={desc}
-          text1={text1}
-          text2={text2}
-          copyright={copyright}
-        />
       </body>
     </html>
   );
