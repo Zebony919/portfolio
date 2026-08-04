@@ -3234,8 +3234,8 @@ export default function drawWireframe(canvas) {
     if (!canvas) return;
 
     canvasElement = canvas;
-    canvasElement.width = 400;
-    canvasElement.height = 400;
+    canvasElement.width = 200;
+    canvasElement.height = 200;
 
     ctx = canvasElement.getContext("2d");
 
